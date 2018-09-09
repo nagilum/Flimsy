@@ -18,7 +18,7 @@ namespace Flimsy {
 
             // Run OnStartup() for each FlimsyModule.
             FlimsyModuleHandler.RunModuleFunction(
-                FlimsyModuleHandler.ModuleFunction.OnStartup);
+                FlimsyModuleHandler.ModuleFunction.OnRegisterRoutes);
 
             // Setup and run the WebHost engine.
             WebHost.CreateDefaultBuilder()
