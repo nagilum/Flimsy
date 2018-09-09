@@ -176,6 +176,12 @@ namespace Flimsy.Api {
                 url = url.Substring(1);
             }
 
+            if (BaseUrl != null &&
+                url.StartsWith(BaseUrl + "/")) {
+
+                url = url.Substring(BaseUrl.Length + 1);
+            }
+
             var sections = url.Split('/');
             var routes = Routes
                 .Where(n => n.HttpMethod.ToString() == ctx.Request.Method.ToUpper() &&
