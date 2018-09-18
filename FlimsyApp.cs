@@ -16,9 +16,10 @@ namespace Flimsy {
             // Read config from JSON.
             Config = FlimsyConfig.Read(args);
 
-            // Run OnStartup() for each FlimsyModule.
-            FlimsyModuleHandler.RunModuleFunction(
-                FlimsyModuleHandler.ModuleFunction.OnRegisterRoutes);
+            // Run RegisterRoutes() for each FlimsyModule.
+            FlimsyInterfaceHandler.RunInterfaceFunction(
+                FlimsyInterfaceHandler.InterfaceFunction.Module_RegisterRoutes,
+                new FlimsyRouter());
 
             // Setup and run the WebHost engine.
             WebHost.CreateDefaultBuilder()

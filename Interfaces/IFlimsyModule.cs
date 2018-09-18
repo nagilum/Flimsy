@@ -5,6 +5,6 @@ namespace Flimsy.Interfaces {
         /// <summary>
         /// Allow each module to register their routes.
         /// </summary>
-        void OnRegisterRoutes(FlimsyRouter router);
+        void RegisterRoutes(FlimsyRouter router);
     }
 }
